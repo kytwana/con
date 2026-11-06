@@ -1,0 +1,5626 @@
+        /* =========================================================
+           GLOBAL RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: #ffffff;
+            color: #111111;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        a {
+            font: inherit;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 88px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 40px;
+
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.65);
+
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+            transition:
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================= */
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            flex-shrink: 0;
+
+            margin-right: 30px;
+        }
+
+        .logo img {
+            width: 125px;
+            height: 70px;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================================================
+           NAV LINKS
+        ========================================================= */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 2px;
+
+            margin: 0 auto;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .nav-links > li {
+            position: relative;
+        }
+
+
+        /* =========================================================
+           DROPDOWN BUTTONS
+        ========================================================= */
+
+        .dropbtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 7px;
+
+            min-height: 44px;
+
+            padding: 10px 17px;
+
+            background: transparent;
+
+            border: none;
+            border-radius: 6px;
+
+            color: #111111;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            line-height: 1;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .dropbtn:hover {
+            color: #3fa84d;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+
+        /* =========================================================
+           DROPDOWN ARROW
+        ========================================================= */
+
+        .arrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            transform: translateY(-1px);
+
+            transition: transform 0.25s ease;
+            
+        }
+
+        .dropdown:hover .arrow {
+            transform: rotate(180deg);
+        }
+
+
+        /* =========================================================
+           DROPDOWN MENU
+        ========================================================= */
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+
+            top: calc(100% + 8px);
+            left: 0;
+
+            min-width: 210px;
+
+            padding: 7px;
+
+            background: rgba(255, 255, 255, 0.98);
+
+            border: 1px solid rgba(0, 0, 0, 0.06);
+
+            border-radius: 10px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.12);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateY(8px);
+
+            transition:
+                opacity 0.2s ease,
+                visibility 0.2s ease,
+                transform 0.2s ease;
+        }
+
+        .dropdown-content::before {
+            content: "";
+
+            position: absolute;
+
+            top: -6px;
+            left: 24px;
+
+            width: 12px;
+            height: 12px;
+
+            background: #ffffff;
+
+            transform: rotate(45deg);
+
+            border-left: 1px solid rgba(0, 0, 0, 0.06);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+
+            padding: 11px 13px;
+
+            border-radius: 7px;
+
+            color: #222222;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: #f0f8f1;
+            color: #3fa84d;
+        }
+
+
+        /* =========================================================
+           ABOUT US
+        ========================================================= */
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+
+            min-height: 44px;
+
+            padding: 10px 17px;
+
+            border-radius: 6px;
+
+            color: #111111;
+
+            font-size: 15px;
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            transition:
+                color 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .nav-link:hover {
+            color: #3fa84d;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+
+        /* =========================================================
+           SEARCH BUTTON
+        ========================================================= */
+
+        .search-item {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        .search-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
+
+            min-height: 42px;
+
+            padding: 9px 17px;
+
+            border: 1px solid rgba(0, 0, 0, 0.12);
+
+            border-radius: 999px;
+
+            background: rgba(255, 255, 255, 0.78);
+
+            color: #111111;
+
+            cursor: pointer;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            white-space: nowrap;
+
+            box-shadow:
+                0 2px 8px rgba(0, 0, 0, 0.04);
+
+            transition:
+                background 0.25s ease,
+                color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .search-btn:hover {
+            background: #4CAF50;
+            color: #ffffff;
+
+            border-color: #4CAF50;
+
+            box-shadow:
+                0 7px 18px rgba(76, 175, 80, 0.20);
+
+            transform: translateY(-1px);
+        }
+
+        .search-icon {
+            width: 17px;
+            height: 17px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================================
+           PLAN YOUR TRIP - NAVBAR
+        ========================================================= */
+
+        .trip-button-wrapper {
+            flex-shrink: 0;
+
+            margin-left: 25px;
+        }
+
+        .trip-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 46px;
+
+            padding: 0 23px;
+
+            background: #4CAF50;
+
+            color: #ffffff;
+
+            border: none;
+            border-radius: 3px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            white-space: nowrap;
+
+            box-shadow:
+                0 6px 18px rgba(76, 175, 80, 0.14);
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .trip-button:hover {
+            background: #409444;
+
+            transform: translateY(-1px);
+
+            box-shadow:
+                0 9px 22px rgba(76, 175, 80, 0.22);
+        }
+
+
+        /* =========================================================
+           HERO SECTION
+        ========================================================= */
+
+        .hero {
+            position: relative;
+
+            width: 100%;
+            min-height: 100vh;
+
+            margin: 0;
+            padding: 0;
+        }
+
+
+        /* =========================================================
+           HERO IMAGE CONTAINER
+        ========================================================= */
+
+        .hero-content {
+            position: relative;
+
+            width: 100%;
+            height: 100vh;
+
+            min-height: 650px;
+
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+        /* =========================================================
+           HERO VIDEO
+        ========================================================= */
+
+        .hero-video {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
+
+            z-index: 1;
+
+            pointer-events: none;
+}
+
+
+
+        /* =========================================================
+           DARK CINEMATIC OVERLAY
+        ========================================================= */
+
+        .hero-content::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 2;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.68) 0%,
+                    rgba(0, 0, 0, 0.48) 28%,
+                    rgba(0, 0, 0, 0.20) 58%,
+                    rgba(0, 0, 0, 0.08) 100%
+                );
+        }
+
+
+        /* =========================================================
+           HERO TEXT
+        ========================================================= */
+
+        .hero-text {
+            position: relative;
+
+            z-index: 3;
+
+            width: 100%;
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            padding: 120px 55px 40px;
+
+            color: #ffffff;
+        }
+
+
+        /* SMALL LABEL */
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            padding: 8px 14px;
+
+            border: 1px solid rgba(255, 255, 255, 0.32);
+
+            border-radius: 999px;
+
+            background: rgba(255, 255, 255, 0.10);
+
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+
+            color: #ffffff;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 1.8px;
+
+            text-transform: uppercase;
+        }
+
+        .hero-eyebrow::before {
+            content: "";
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: #4CAF50;
+
+            box-shadow:
+                0 0 0 4px rgba(76, 175, 80, 0.16);
+        }
+        .video-label {
+                    position: absolute;
+
+                    right: 38px;
+                    bottom: 35px;
+
+                    z-index: 4;
+
+                    display: flex;
+                    align-items: center;
+
+                    gap: 10px;
+
+                    padding: 10px 15px;
+
+                    border:
+                        1px solid
+                        rgba(255, 255, 255, 0.28);
+
+                    border-radius: 999px;
+
+                    background:
+                        rgba(0, 0, 0, 0.22);
+
+                    backdrop-filter: blur(8px);
+                    -webkit-backdrop-filter: blur(8px);
+
+                    color: #ffffff;
+
+                    font-size: 11px;
+                    font-weight: 700;
+}
+
+
+        /* MAIN HEADING */
+
+        .hero-text h1 {
+            margin: 0;
+
+            max-width: 750px;
+
+            color: #ffffff;
+
+            font-size: clamp(42px, 5.3vw, 76px);
+
+            font-weight: 800;
+
+            line-height: 1.03;
+
+            letter-spacing: -2.5px;
+
+            text-shadow:
+                0 5px 25px rgba(0, 0, 0, 0.30);
+        }
+
+
+        /* GREEN HIGHLIGHT */
+
+        .hero-text h1 span {
+            color: #5acb66;
+        }
+
+
+        /* DESCRIPTION */
+
+        .hero-text p {
+            max-width: 620px;
+
+            margin: 24px 0 0;
+
+            color: rgba(255, 255, 255, 0.90);
+
+            font-size: 17px;
+
+            font-weight: 400;
+
+            line-height: 1.7;
+
+            text-shadow:
+                0 3px 15px rgba(0, 0, 0, 0.30);
+        }
+
+
+        /* =========================================================
+           HERO BUTTONS
+        ========================================================= */
+
+        .hero-buttons {
+            display: flex;
+            align-items: center;
+
+            gap: 14px;
+
+            margin-top: 32px;
+        }
+
+
+        /* PRIMARY BUTTON */
+
+        .hero-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+
+            padding: 0 27px;
+
+            border-radius: 4px;
+
+            background: #4CAF50;
+
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            box-shadow:
+                0 10px 28px rgba(0, 0, 0, 0.18);
+
+            transition:
+                background 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .hero-btn-primary:hover {
+            background: #409444;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.24);
+        }
+
+
+        /* SECONDARY BUTTON */
+
+        .hero-btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+
+            padding: 0 25px;
+
+            border: 1px solid rgba(255, 255, 255, 0.55);
+
+            border-radius: 4px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
+
+            color: #ffffff;
+
+            font-size: 14px;
+            font-weight: 800;
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .hero-btn-secondary:hover {
+            background: #ffffff;
+
+            border-color: #ffffff;
+
+            color: #222222;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HERO BOTTOM INFORMATION
+        ========================================================= */
+
+        .hero-meta {
+            display: flex;
+            align-items: center;
+
+            gap: 28px;
+
+            margin-top: 40px;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            color: rgba(255, 255, 255, 0.85);
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .hero-meta-icon {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #4CAF50;
+        }
+
+       .hero-end {
+                position: relative;
+
+                width: 100%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-top: 0;
+                padding: 100px 20px 120px;
+
+                background:
+                    radial-gradient(
+                        circle at 50% 0%,
+                        rgba(76, 175, 80, 0.08),
+                        transparent 45%
+                    ),
+                    #ffffff;
+
+                overflow: hidden;
+}
+
+
+/* SUBTLE DECORATIVE LINE */
+
+.hero-end::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    width: 70px;
+    height: 3px;
+
+    transform: translateX(-50%);
+
+    background: #4CAF50;
+
+    border-radius: 999px;
+}
+
+
+/* DECORATIVE BACKGROUND CIRCLE */
+
+.hero-end::after {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(76, 175, 80, 0.07);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.hero-end-text {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.hero-end-text img {
+    display: block;
+
+    width: 165px;
+    height: auto;
+
+    object-fit: contain;
+
+    margin: 0 0 20px;
+
+    filter:
+        drop-shadow(0 8px 18px rgba(0, 0, 0, 0.10));
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.hero-end-text img:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    filter:
+        drop-shadow(0 12px 25px rgba(0, 0, 0, 0.14));
+}
+
+
+/* =========================================================
+   COMPANY NAME
+========================================================= */
+
+.hero-end-text h2 {
+    margin: 0;
+
+    color: #4CAF50;
+
+    font-size: clamp(18px, 2vw, 25px);
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    line-height: 1.2;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN TAGLINE
+========================================================= */
+
+.hero-end-description {
+    margin: 12px 0 0;
+
+    color: #171717;
+
+    font-size: clamp(32px, 5vw, 62px);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    text-transform: uppercase;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171717 0%,
+            #4a4a4a 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   SMALL GREEN ACCENT
+========================================================= */
+
+.hero-end-text::after {
+    content: "";
+
+    width: 45px;
+    height: 3px;
+
+    margin-top: 25px;
+
+    background: #4CAF50;
+
+    border-radius: 999px;
+}
+/* =========================================================
+   PART ONE — THE SPIRIT OF TANZANIA
+========================================================= */
+
+.part-one {
+    position: relative;
+
+    width: 100%;
+
+    padding: 120px 6vw 130px;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(76, 175, 80, 0.07),
+            transparent 32%
+        ),
+        #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.part-one-content {
+    position: relative;
+
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 70px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.part-one-content h2 {
+    grid-column: 1 / 2;
+
+    margin: 0 0 25px;
+
+    color: #171717;
+
+    font-size: clamp(38px, 5vw, 66px);
+
+    font-weight: 850;
+
+    line-height: 1.03;
+
+    letter-spacing: -2.5px;
+
+    position: relative;
+}
+
+
+/* GREEN ACCENT */
+
+.part-one-content h2::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+    height: 4px;
+
+    margin-top: 20px;
+
+    background: #4CAF50;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   INTRODUCTION TEXT
+========================================================= */
+
+.part-one-content > p:first-of-type {
+    grid-column: 1 / 2;
+
+    margin: 0;
+
+    max-width: 570px;
+
+    color: #555555;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    line-height: 1.85;
+
+    letter-spacing: 0.1px;
+}
+
+
+/* =========================================================
+   IMAGE POSITIONING
+========================================================= */
+
+.part-one-image {
+    position: absolute;
+
+    width: 300px;
+    height: 390px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    box-shadow:
+        0 25px 55px rgba(0, 0, 0, 0.15);
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+/* FIRST IMAGE */
+
+.part-one-image:nth-of-type(1) {
+    top: 20px;
+    right: 220px;
+
+    transform: rotate(-4deg);
+
+    z-index: 2;
+}
+
+
+/* SECOND IMAGE */
+
+.part-one-image:nth-of-type(2) {
+    top: 115px;
+    right: 0;
+
+    transform: rotate(4deg);
+
+    z-index: 1;
+}
+
+
+/* IMAGE HOVER */
+
+.part-one-image:hover {
+    transform:
+        translateY(-8px)
+        rotate(0deg)
+        scale(1.025);
+
+    z-index: 5;
+
+    box-shadow:
+        0 30px 65px rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.part-one-content > p:last-of-type {
+    grid-column: 1 / 3;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 110px auto 0;
+
+    padding: 35px 55px;
+
+    border-left: 4px solid #4CAF50;
+
+    color: #222222;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(20px, 2.2vw, 30px);
+
+    font-style: italic;
+
+    font-weight: 500;
+
+    line-height: 1.5;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+/* QUOTE MARK */
+
+.part-one-content > p:last-of-type::before {
+    content: "“";
+
+    position: absolute;
+
+    top: -35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    color: rgba(76, 175, 80, 0.18);
+
+    font-family: Georgia, serif;
+
+    font-size: 110px;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DECORATION
+========================================================= */
+
+.part-one::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    left: -150px;
+    bottom: 80px;
+
+    border: 1px solid rgba(76, 175, 80, 0.08);
+
+    border-radius: 50%;
+}
+
+
+.part-one::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -80px;
+    top: 70px;
+
+    border: 1px solid rgba(76, 175, 80, 0.08);
+
+    border-radius: 50%;
+}
+/* =========================================================
+   DISCOVER DESTINATIONS CTA
+========================================================= */
+
+.discover-destinations {
+    grid-column: 1 / 3;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    margin: 65px auto 0;
+
+    color: #4CAF50;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    position: relative;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.discover-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 10px;
+
+    font-size: 22px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.discover-text {
+    position: relative;
+
+    padding-bottom: 6px;
+}
+
+
+/* =========================================================
+   UNDERLINE
+========================================================= */
+
+.discover-text::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: #4CAF50;
+
+    transform: scaleX(0);
+
+    transform-origin: right;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.discover-destinations:hover {
+    color: #388e3c;
+
+    transform: translateX(4px);
+}
+
+.discover-destinations:hover .discover-arrow {
+    transform: translateX(6px);
+}
+
+.discover-destinations:hover .discover-text::after {
+    transform: scaleX(1);
+
+    transform-origin: left;
+}
+
+/* =========================================================
+   PART TWO — OFFICIAL TOUR OPERATOR
+========================================================= */
+
+.part-two {
+    position: relative;
+
+    width: 100%;
+
+    padding: 125px 6vw 130px;
+
+    background: #f7f8f5;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DECORATION
+========================================================= */
+
+.part-two::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -220px;
+    top: -180px;
+
+    border: 1px solid rgba(76, 175, 80, 0.08);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.part-two::after {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: -140px;
+    bottom: -130px;
+
+    border: 1px solid rgba(76, 175, 80, 0.07);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTENT CONTAINER
+========================================================= */
+
+.part-two-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1050px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.part-two-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    color: #4CAF50;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2.2px;
+
+    text-transform: uppercase;
+}
+
+
+.part-two-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 2px;
+
+    background: #4CAF50;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.part-two-content h2 {
+    max-width: 950px;
+
+    margin: 0;
+
+    color: #171717;
+
+    font-size: clamp(42px, 5.2vw, 70px);
+
+    font-weight: 850;
+
+    line-height: 1.02;
+
+    letter-spacing: -3px;
+}
+
+
+/* GREEN PART OF HEADING */
+
+.part-two-content h2 span {
+    display: block;
+
+    color: #4CAF50;
+}
+
+
+/* =========================================================
+   SUPPORTING HEADING
+========================================================= */
+
+.part-two-content h5 {
+    max-width: 850px;
+
+    margin: 30px 0 0;
+
+    color: #3c3c3c;
+
+    font-size: clamp(17px, 1.7vw, 21px);
+
+    font-weight: 500;
+
+    line-height: 1.65;
+
+    letter-spacing: -0.1px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.part-two-content > p {
+    max-width: 900px;
+
+    margin: 32px 0 0;
+
+    color: #626262;
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   VERIFICATION CARD
+========================================================= */
+
+.part-two-verification {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    margin-top: 50px;
+
+    padding: 28px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    border-left: 4px solid #4CAF50;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 45px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   VERIFICATION TEXT
+========================================================= */
+
+.verification-text {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    max-width: 650px;
+}
+
+
+.verification-label {
+    color: #171717;
+
+    font-size: 12px;
+    font-weight: 850;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+.verification-description {
+    color: #777777;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   VERIFICATION BUTTON
+========================================================= */
+
+.verification-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 13px;
+
+    flex-shrink: 0;
+
+    min-height: 50px;
+
+    padding: 0 21px;
+
+    background: #4CAF50;
+
+    color: #ffffff;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 8px 22px rgba(76, 175, 80, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.verification-button:hover {
+    background: #3f9444;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 28px rgba(76, 175, 80, 0.25);
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.verification-arrow {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.verification-button:hover .verification-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* =========================================================
+   CHOOSE US — PREMIUM FEATURE LIST
+========================================================= */
+
+.choose-us {
+    width: 100%;
+
+    margin-top: 65px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.choose-us-content {
+    width: min(1050px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.choose-us-content ul {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px 18px;
+
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+
+/* =========================================================
+   LIST ITEM
+========================================================= */
+
+.choose-us-content li {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+   
+    min-height: 76px;
+
+    padding: 21px 22px 21px 58px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    border: 1px solid rgba(0, 0, 0, 0.07);
+
+    border-radius: 7px;
+
+    color: #3d3d3d;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================================
+   GREEN MARKER
+========================================================= */
+
+.choose-us-content li::before {
+    content: "✓";
+
+    position: absolute;
+
+    top: 50%;
+    left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    transform: translateY(-50%);
+
+    background: #4CAF50;
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 900;
+
+    box-shadow:
+        0 5px 12px rgba(76, 175, 80, 0.20);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.choose-us-content li:hover {
+    transform: translateY(-3px);
+
+    background: #ffffff;
+
+    border-color: rgba(76, 175, 80, 0.22);
+
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   HOVER MARKER
+========================================================= */
+
+.choose-us-content li:hover::before {
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   EMPHASIS FOR NUMERIC / ACHIEVEMENT ITEMS
+========================================================= */
+
+.choose-us-content li:nth-child(3),
+.choose-us-content li:nth-child(5),
+.choose-us-content li:nth-child(6),
+.choose-us-content li:nth-child(8) {
+    color: #292929;
+}
+
+
+/* =========================================================
+   SUBTLE ACCENT ON LAST ITEM
+========================================================= */
+
+.choose-us-content li:last-child {
+    border-left: 3px solid #4CAF50;
+}
+
+/* =========================================================
+   PART THREE — AFRICA LOCAL EXPERTS
+   Premium Travel Editorial Style
+========================================================= */
+
+.part-three {
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 6vw 120px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DETAIL
+========================================================= */
+
+.part-three::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 28%;
+    height: 100%;
+
+    background: #f3f6ef;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+========================================================= */
+
+.part-three-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) 450px;
+
+    column-gap: 75px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.part-three-content h2 {
+    grid-column: 1;
+    grid-row: 1;
+
+    max-width: 700px;
+
+    margin: 0 0 28px;
+
+    color: #1c241d;
+
+    font-size: clamp(40px, 4.8vw, 65px);
+
+    font-weight: 850;
+
+    line-height: 1.04;
+
+    letter-spacing: -2.5px;
+
+    text-transform: uppercase;
+}
+
+
+.part-three-content h2::after {
+    content: "";
+
+    display: block;
+
+    width: 58px;
+    height: 3px;
+
+    margin-top: 22px;
+
+    background: #4CAF50;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.part-three-image {
+    grid-column: 2;
+    grid-row: 1 / 4;
+
+    display: block;
+
+    width: 100%;
+    height: 590px;
+
+    margin: 15px 0 0;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 2px;
+
+    box-shadow:
+        -18px 18px 0 #e2ebde;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.part-three-image:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        -23px 23px 0 #d9e5d5;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.part-three-content > p {
+    grid-column: 1;
+    grid-row: 2;
+
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #5c625c;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    white-space: pre-line;
+}
+
+
+/* =========================================================
+   CHECK US
+========================================================= */
+
+.part-three .check-us {
+    grid-column: 1;
+    grid-row: 3;
+
+    margin-top: 42px;
+
+    padding: 28px 30px;
+
+    background: #f7f8f5;
+
+    border-top: 3px solid #4CAF50;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   CONTACT HEADING
+========================================================= */
+
+.part-three .check-us h4 {
+    margin: 0 0 18px;
+
+    color: #20261f;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.part-three .contact-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0 24px;
+
+    margin-bottom: 25px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.part-three .contact-info p {
+    margin: 0;
+
+    padding: 11px 0;
+
+    color: #656b64;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   OFFICE
+========================================================= */
+
+.part-three .visit {
+    margin-bottom: 24px;
+
+    padding-left: 16px;
+
+    border-left: 3px solid #4CAF50;
+}
+
+
+.part-three .visit h4 {
+    margin: 0 0 6px;
+
+    color: #4CAF50;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.part-three .visit p {
+    margin: 0;
+
+    color: #626860;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.part-three .check-us > button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 49px;
+
+    padding: 0 24px;
+
+    border: none;
+
+    border-radius: 2px;
+
+    background: #243127;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.part-three .check-us > button:hover {
+    background: #4CAF50;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.part-three .check-us > p:last-child {
+    margin: 14px 0 0;
+
+    color: #858a83;
+
+    font-size: 12px;
+}
+
+
+.part-three .check-us > p:last-child a {
+    color: #418b46;
+
+    font-weight: 800;
+
+    text-decoration: none;
+}
+
+
+.part-three .check-us > p:last-child a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   PART FOUR — EDITORIAL NAVIGATION
+========================================================= */
+
+.part-four {
+    position: relative;
+
+    width: 100%;
+
+    padding: 90px 6vw;
+
+    background: #17231b;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DETAIL
+========================================================= */
+
+.part-four::before {
+    content: "EXPLORE";
+
+    position: absolute;
+
+    left: -20px;
+    bottom: -45px;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    font-size: clamp(100px, 16vw, 210px);
+
+    font-weight: 900;
+
+    letter-spacing: -8px;
+
+    line-height: 1;
+
+    pointer-events: none;
+}
+
+
+.part-four::after {
+    content: "";
+
+    position: absolute;
+
+    right: 7%;
+    top: 50%;
+
+    width: 90px;
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    transform: translateY(-50%);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.part-four-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.part-four-button {
+    position: relative;
+
+    min-height: 105px;
+
+    padding: 25px 28px;
+
+    border: none;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    font-size: 13px;
+
+    font-weight: 750;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease;
+}
+
+
+/* REMOVE BORDER FROM LAST BUTTON */
+
+.part-four-button:last-child {
+    border-right: none;
+}
+
+
+/* =========================================================
+   NUMBER / INDEX
+========================================================= */
+
+.part-four-button::before {
+    position: absolute;
+
+    top: 20px;
+    right: 24px;
+
+    color: rgba(255, 255, 255, 0.20);
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+#plan-trip::before {
+    content: "01";
+}
+
+#explore-safaris::before {
+    content: "02";
+}
+
+#discover-destinations::before {
+    content: "03";
+}
+
+#contact-us::before {
+    content: "04";
+}
+
+
+/* =========================================================
+   GREEN LINE
+========================================================= */
+
+.part-four-button::after {
+    content: "";
+
+    position: absolute;
+
+    left: 28px;
+    bottom: 20px;
+
+    width: 0;
+    height: 2px;
+
+    background: #4CAF50;
+
+    transition:
+        width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.part-four-button:hover {
+    background: rgba(255, 255, 255, 0.045);
+
+    color: #ffffff;
+}
+
+
+.part-four-button:hover::after {
+    width: 42px;
+}
+
+
+/* =========================================================
+   SMALL ARROW
+========================================================= */
+
+.part-four-button span {
+    display: inline-block;
+}
+
+
+/* =========================================================
+   PART FIVE — POPULAR AFRICAN DESTINATIONS
+   Premium Editorial Destination Gallery
+========================================================= */
+
+.part-five {
+    position: relative;
+
+    width: 100%;
+
+    padding: 115px 6vw 125px;
+
+    background: #f7f8f5;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   SUBTLE TRANSITION FROM PART FOUR
+========================================================= */
+
+
+/* =========================================================
+   CONTENT CONTAINER
+========================================================= */
+
+.part-five-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto;
+
+    align-items: end;
+
+    column-gap: 60px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.part-five-content > h2 {
+    position: relative;
+
+    max-width: 730px;
+
+    margin: 0;
+
+    color: #1b221c;
+
+    font-size:
+        clamp(42px, 5vw, 67px);
+
+    font-weight: 850;
+
+    line-height: 1.02;
+
+    letter-spacing: -2.8px;
+}
+
+
+/* SMALL EDITORIAL GREEN ACCENT */
+
+.part-five-content > h2::before {
+    content: "EXPLORE AFRICA";
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #4CAF50;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: 2.4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   EXPLORE DESTINATIONS BUTTON
+========================================================= */
+
+.part-five-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    min-height: 52px;
+
+    margin-bottom: 5px;
+
+    padding: 0 22px;
+
+    border:
+        1px solid
+        rgba(29, 40, 30, 0.20);
+
+    border-radius: 2px;
+
+    background: transparent;
+
+    color: #202a22;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.part-five-button span {
+    display: inline-flex;
+
+    font-size: 17px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.35s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.part-five-button:hover {
+    background: #1f2b22;
+
+    border-color: #1f2b22;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+.part-five-button:hover span {
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* =========================================================
+   DESTINATION GRID
+========================================================= */
+
+.part-five .explore {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    margin-top: 65px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 14px;
+
+    counter-reset: destination;
+}
+
+
+/* =========================================================
+   DESTINATION CARD
+========================================================= */
+
+.part-five .explore-destination {
+    position: relative;
+
+    min-width: 0;
+    height: 410px;
+
+    overflow: hidden;
+
+    background: #17231b;
+
+    counter-increment: destination;
+
+    box-shadow:
+        0 10px 28px
+        rgba(20, 30, 22, 0.08);
+
+    transition:
+        transform 0.5s
+        cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s ease;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.part-five .explore-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.01);
+
+    transition:
+        transform 0.8s
+        cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.6s ease;
+}
+
+
+/* =========================================================
+   CINEMATIC IMAGE GRADIENT
+========================================================= */
+
+.part-five .explore-destination::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(13, 22, 15, 0.03) 20%,
+            rgba(13, 22, 15, 0.10) 48%,
+            rgba(13, 22, 15, 0.82) 100%
+        );
+
+    pointer-events: none;
+
+    transition:
+        background 0.5s ease;
+}
+
+
+/* =========================================================
+   DESTINATION NUMBER
+========================================================= */
+
+.part-five .explore-destination::before {
+    content:
+        "0"
+        counter(destination);
+
+    position: absolute;
+
+    top: 20px;
+    left: 20px;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 34px;
+    height: 34px;
+
+    padding: 0 8px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.40);
+
+    background:
+        rgba(16, 29, 18, 0.18);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   DESTINATION NAME
+========================================================= */
+
+.part-five .explore-destination h3 {
+    position: absolute;
+
+    z-index: 4;
+
+    left: 22px;
+    right: 22px;
+    bottom: 23px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(21px, 2vw, 28px);
+
+    font-weight: 750;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.7px;
+
+    text-shadow:
+        0 3px 15px
+        rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.5s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* SMALL GREEN DETAIL BELOW TITLE */
+
+.part-five .explore-destination h3::after {
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    margin-top: 11px;
+
+    background: #5acb66;
+
+    transform: scaleX(0.55);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.5s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.part-five .explore-destination:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 22px 45px
+        rgba(20, 30, 22, 0.16);
+}
+
+
+.part-five .explore-destination:hover
+.explore-image {
+    transform: scale(1.065);
+}
+
+
+.part-five .explore-destination:hover::before {
+    background:
+        rgba(76, 175, 80, 0.85);
+
+    border-color:
+        rgba(255, 255, 255, 0.55);
+}
+
+
+.part-five .explore-destination:hover h3 {
+    transform: translateY(-4px);
+}
+
+
+.part-five .explore-destination:hover
+h3::after {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   SLIGHT EDITORIAL DEPTH
+   Keeps five cards from looking like a generic grid
+========================================================= */
+
+.part-five .explore-destination:nth-child(2),
+.part-five .explore-destination:nth-child(4) {
+    margin-top: 24px;
+}
+
+/* =========================================================
+   PART SIX — EAST AFRICA DESTINATION DIRECTORY
+   Premium Editorial Travel Index
+   ONLY PART SIX IS AFFECTED
+========================================================= */
+
+.part-six {
+    position: relative;
+
+    width: 100%;
+
+    padding: 125px 6vw 140px;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   SUBTLE BACKGROUND DETAIL
+========================================================= */
+
+.part-six::before {
+    content: "AFRICA";
+
+    position: absolute;
+
+    top: 45px;
+    right: -30px;
+
+    z-index: -1;
+
+    color: rgba(23, 35, 27, 0.025);
+
+    font-size: clamp(130px, 19vw, 280px);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    letter-spacing: -10px;
+
+    pointer-events: none;
+}
+
+
+/* SMALL GREEN DETAIL */
+
+.part-six::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(76, 175, 80, 0.28) 50%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.part-six-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION INTRO LABEL
+   Added without changing your HTML
+========================================================= */
+
+.part-six-content::before {
+    content: "DESTINATION DIRECTORY";
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 58px;
+
+    color: #4CAF50;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   ALL COUNTRY SECTIONS
+========================================================= */
+
+.part-six .beautiful-destinations-TZ,
+.part-six .beautiful-destinations-KE,
+.part-six .beautiful-destinations-RW,
+.part-six .beautiful-destinations-UG {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.75fr)
+        minmax(0, 1.55fr);
+
+    column-gap: 75px;
+
+    align-items: start;
+
+    padding: 75px 0;
+
+    border-top:
+        1px solid
+        rgba(26, 38, 29, 0.12);
+}
+
+
+/* FIRST COUNTRY */
+
+.part-six .beautiful-destinations-TZ {
+    padding-top: 0;
+
+    border-top: none;
+}
+
+
+/* =========================================================
+   COUNTRY HEADING
+========================================================= */
+
+.part-six .beautiful-destinations-TZ > h2,
+.part-six .beautiful-destinations-KE > h2,
+.part-six .beautiful-destinations-RW > h2,
+.part-six .beautiful-destinations-UG > h2 {
+    position: relative;
+
+    margin: 0;
+
+    max-width: 440px;
+
+    color: #19231c;
+
+    font-size:
+        clamp(34px, 3.6vw, 51px);
+
+    font-weight: 850;
+
+    line-height: 1.06;
+
+    letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   COUNTRY EYEBROWS
+========================================================= */
+
+.part-six .beautiful-destinations-TZ > h2::before,
+.part-six .beautiful-destinations-KE > h2::before,
+.part-six .beautiful-destinations-RW > h2::before,
+.part-six .beautiful-destinations-UG > h2::before {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #4CAF50;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: 2.2px;
+
+    text-transform: uppercase;
+}
+
+
+.part-six .beautiful-destinations-TZ > h2::before {
+    content: "01  ·  TANZANIA";
+}
+
+.part-six .beautiful-destinations-KE > h2::before {
+    content: "02  ·  KENYA";
+}
+
+.part-six .beautiful-destinations-RW > h2::before {
+    content: "03  ·  RWANDA";
+}
+
+.part-six .beautiful-destinations-UG > h2::before {
+    content: "04  ·  UGANDA";
+}
+
+
+/* =========================================================
+   GREEN HEADING LINE
+========================================================= */
+
+.part-six .beautiful-destinations-TZ > h2::after,
+.part-six .beautiful-destinations-KE > h2::after,
+.part-six .beautiful-destinations-RW > h2::after,
+.part-six .beautiful-destinations-UG > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 3px;
+
+    margin-top: 25px;
+
+    background: #4CAF50;
+
+    transform-origin: left;
+
+    transition:
+        width 0.45s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* EXPAND ACCENT WHEN COUNTRY AREA IS HOVERED */
+
+.part-six .beautiful-destinations-TZ:hover > h2::after,
+.part-six .beautiful-destinations-KE:hover > h2::after,
+.part-six .beautiful-destinations-RW:hover > h2::after,
+.part-six .beautiful-destinations-UG:hover > h2::after {
+    width: 78px;
+}
+
+
+/* =========================================================
+   DESTINATION LIST
+========================================================= */
+
+.part-six .beautiful-destinations-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 35px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+    counter-reset: destination-item;
+}
+
+
+/* =========================================================
+   DESTINATION ROW
+========================================================= */
+
+.part-six .beautiful-destinations-list > li {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    min-height: 62px;
+
+    gap: 13px;
+
+    padding: 16px 4px;
+
+    border-bottom:
+        1px solid
+        rgba(26, 38, 29, 0.10);
+
+    color: #333a34;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    line-height: 1.45;
+
+    counter-increment: destination-item;
+
+    transition:
+        color 0.3s ease,
+        transform 0.35s
+        cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   DESTINATION NUMBER
+========================================================= */
+
+.part-six .beautiful-destinations-list > li::before {
+    content:
+        counter(destination-item, decimal-leading-zero);
+
+    flex: 0 0 auto;
+
+    min-width: 24px;
+
+    color: rgba(76, 175, 80, 0.82);
+
+    font-size: 9px;
+
+    font-weight: 850;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.part-six .stats {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 45px;
+    min-height: 26px;
+
+    margin-left: auto;
+
+    padding: 4px 9px;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(76, 175, 80, 0.16);
+
+    border-radius: 999px;
+
+    background:
+        rgba(76, 175, 80, 0.055);
+
+    color: #4b7350;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.3px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* =========================================================
+   LIST HOVER
+========================================================= */
+
+.part-six .beautiful-destinations-list > li:hover {
+    color: #17231b;
+
+    border-color:
+        rgba(76, 175, 80, 0.32);
+
+    transform:
+        translateX(5px);
+}
+
+
+.part-six
+.beautiful-destinations-list
+> li:hover
+.stats {
+    background: #4CAF50;
+
+    border-color: #4CAF50;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   COUNTRY WATERMARK CODES
+========================================================= */
+
+.part-six .beautiful-destinations-TZ::after,
+.part-six .beautiful-destinations-KE::after,
+.part-six .beautiful-destinations-RW::after,
+.part-six .beautiful-destinations-UG::after {
+    position: absolute;
+
+    left: 0;
+    bottom: 35px;
+
+    z-index: -1;
+
+    color:
+        rgba(76, 175, 80, 0.035);
+
+    font-size: 105px;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -6px;
+
+    pointer-events: none;
+}
+
+
+.part-six .beautiful-destinations-TZ::after {
+    content: "TZ";
+}
+
+.part-six .beautiful-destinations-KE::after {
+    content: "KE";
+}
+
+.part-six .beautiful-destinations-RW::after {
+    content: "RW";
+}
+
+.part-six .beautiful-destinations-UG::after {
+    content: "UG";
+}
+
+/* =========================================================
+   PART SEVEN — WHAT TO KNOW ABOUT AFRICA
+   Cinematic Editorial Story Section
+   ONLY PART SEVEN IS AFFECTED
+========================================================= */
+
+.part-seven {
+    position: relative;
+
+    width: 100%;
+
+    padding: 125px 6vw 135px;
+
+    background: #17231b;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   TOP TRANSITION LINE
+========================================================= */
+
+.part-seven::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(90, 203, 102, 0.45) 50%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   LARGE BACKGROUND TYPOGRAPHY
+========================================================= */
+
+.part-seven::before {
+    content: "AFRICA";
+
+    position: absolute;
+
+    right: -45px;
+    bottom: -45px;
+
+    z-index: -1;
+
+    color: rgba(255, 255, 255, 0.025);
+
+    font-size:
+        clamp(130px, 20vw, 300px);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    letter-spacing: -12px;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   CONTENT CONTAINER
+========================================================= */
+
+.part-seven-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SMALL EDITORIAL LABEL
+========================================================= */
+
+.part-seven-content::before {
+    content: "KNOW AFRICA";
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    color: #5acb66;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: 2.6px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN SECTION TITLE
+========================================================= */
+
+.part-seven-content > h2 {
+    position: relative;
+
+    max-width: 760px;
+
+    margin: 0 0 75px;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(46px, 5.5vw, 72px);
+
+    font-weight: 850;
+
+    line-height: 1.01;
+
+    letter-spacing: -3px;
+}
+
+
+/* GREEN ACCENT */
+
+.part-seven-content > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 64px;
+    height: 3px;
+
+    margin-top: 25px;
+
+    background: #4CAF50;
+}
+
+
+/* =========================================================
+   KNOW AFRICA CONTENT LAYOUT
+========================================================= */
+
+.part-seven .know {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.85fr)
+        minmax(420px, 1.15fr);
+
+    grid-template-rows:
+        auto
+        1fr;
+
+    column-gap: 80px;
+    row-gap: 28px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SECONDARY HEADING
+========================================================= */
+
+.part-seven .know > h2 {
+    grid-column: 1;
+    grid-row: 1;
+
+    max-width: 470px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(30px, 3.3vw, 45px);
+
+    font-weight: 750;
+
+    line-height: 1.08;
+
+    letter-spacing: -1.8px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.part-seven .know > p {
+    grid-column: 1;
+    grid-row: 2;
+
+    max-width: 510px;
+
+    margin: 0;
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-size: 16px;
+
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    letter-spacing: 0.05px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.part-seven-image {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    display: block;
+
+    width: 100%;
+    height: 570px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 2px;
+
+    box-shadow:
+        -18px 18px 0
+        rgba(76, 175, 80, 0.15);
+
+    transition:
+        transform 0.7s
+        cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.7s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* =========================================================
+   IMAGE FRAME DETAIL
+========================================================= */
+
+.part-seven .know::after {
+    content: "";
+
+    position: absolute;
+
+    right: -20px;
+    top: -20px;
+
+    width: 115px;
+    height: 115px;
+
+    border-top:
+        1px solid
+        rgba(90, 203, 102, 0.45);
+
+    border-right:
+        1px solid
+        rgba(90, 203, 102, 0.45);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SMALL IMAGE INDEX
+========================================================= */
+
+.part-seven .know::before {
+    content: "01 / AFRICA";
+
+    position: absolute;
+
+    z-index: 4;
+
+    right: 18px;
+    bottom: 18px;
+
+    padding: 9px 12px;
+
+    background:
+        rgba(15, 26, 18, 0.72);
+
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    color:
+        rgba(255, 255, 255, 0.86);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
+
+.part-seven-image:hover {
+    transform:
+        translateY(-5px)
+        scale(1.012);
+
+    box-shadow:
+        -24px 24px 0
+        rgba(76, 175, 80, 0.20);
+}
+
+
+/* =========================================================
+   SUBTLE TEXT DETAIL
+========================================================= */
+
+.part-seven .know > p::before {
+    content: "";
+
+    display: block;
+
+    width: 32px;
+    height: 2px;
+
+    margin-bottom: 22px;
+
+    background: #4CAF50;
+}
+
+
+/* =========================================================
+   PART EIGHT — WHY BOOK WITH US
+   Premium Trust & Credibility Section
+   ONLY PART EIGHT IS AFFECTED
+========================================================= */
+
+.part-eight {
+    position: relative;
+
+    width: 100%;
+
+    padding: 125px 6vw 140px;
+
+    background: #f7f8f5;
+
+    overflow: hidden;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND DETAIL
+========================================================= */
+
+.part-eight::before {
+    content: "TRUST";
+
+    position: absolute;
+
+    right: -30px;
+    top: 40px;
+
+    z-index: -1;
+
+    color: rgba(23, 35, 27, 0.025);
+
+    font-size:
+        clamp(130px, 18vw, 270px);
+
+    font-weight: 900;
+
+    line-height: 0.8;
+
+    letter-spacing: -10px;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+/* TOP TRANSITION */
+
+.part-eight::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(76, 175, 80, 0.32),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.part-eight-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1180px, 100%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SMALL EYEBROW
+========================================================= */
+
+.part-eight-content::before {
+    content: "WHY TRAVEL WITH US";
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #4CAF50;
+
+    font-size: 11px;
+
+    font-weight: 850;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.part-eight-content > h2 {
+    max-width: 920px;
+
+    margin: 0;
+
+    color: #19231c;
+
+    font-size:
+        clamp(42px, 5vw, 66px);
+
+    font-weight: 850;
+
+    line-height: 1.03;
+
+    letter-spacing: -2.8px;
+}
+
+
+/* GREEN DETAIL */
+
+.part-eight-content > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 62px;
+    height: 3px;
+
+    margin-top: 25px;
+
+    background: #4CAF50;
+}
+
+
+/* =========================================================
+   INTRO PARAGRAPH
+========================================================= */
+
+.part-eight-content > p {
+    max-width: 760px;
+
+    margin: 32px 0 0;
+
+    color: #626a62;
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   WHY WRAPPER
+========================================================= */
+
+.part-eight .why {
+    width: 100%;
+
+    margin-top: 65px;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.part-eight .why-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    border-top:
+        1px solid
+        rgba(26, 38, 29, 0.13);
+
+    border-bottom:
+        1px solid
+        rgba(26, 38, 29, 0.13);
+}
+
+
+/* =========================================================
+   INDIVIDUAL STAT
+========================================================= */
+
+.part-eight .why-content {
+    position: relative;
+
+    min-height: 185px;
+
+    padding: 34px 36px;
+
+    border-right:
+        1px solid
+        rgba(26, 38, 29, 0.13);
+}
+
+
+/* LAST STAT */
+
+.part-eight .why-content:last-child {
+    border-right: none;
+}
+
+
+/* NUMBER */
+
+.part-eight .why-content > span {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #4CAF50;
+
+    font-size:
+        clamp(43px, 5vw, 62px);
+
+    font-weight: 850;
+
+    line-height: 1;
+
+    letter-spacing: -2.5px;
+}
+
+
+/* DESCRIPTION */
+
+.part-eight .why-content > p {
+    max-width: 260px;
+
+    margin: 0;
+
+    color: #343c35;
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    line-height: 1.55;
+}
+
+
+/* SMALL GREEN LINE */
+
+.part-eight .why-content::after {
+    content: "";
+
+    position: absolute;
+
+    left: 36px;
+    bottom: 28px;
+
+    width: 25px;
+    height: 2px;
+
+    background: rgba(76, 175, 80, 0.5);
+
+    transition:
+        width 0.4s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.part-eight .why-content:hover::after {
+    width: 55px;
+}
+
+
+/* =========================================================
+   WHY LIST
+========================================================= */
+
+.part-eight .why-list {
+    width: 100%;
+
+    margin: 70px 0 0;
+
+    padding: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 55px;
+
+    list-style: none;
+
+    counter-reset: reason;
+}
+
+
+/* =========================================================
+   REASON ITEM
+========================================================= */
+
+.part-eight .why-list > li {
+    position: relative;
+
+    min-height: 88px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding:
+        20px
+        20px
+        20px
+        72px;
+
+    border-top:
+        1px solid
+        rgba(25, 35, 28, 0.11);
+
+    color: #333b34;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 1.6;
+
+    counter-increment: reason;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.35s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/* LAST TWO ITEMS GET BOTTOM BORDER */
+
+.part-eight .why-list > li:nth-last-child(-n + 2) {
+    border-bottom:
+        1px solid
+        rgba(25, 35, 28, 0.11);
+}
+
+
+/* =========================================================
+   AUTOMATIC NUMBER
+========================================================= */
+
+.part-eight .why-list > li::before {
+    content:
+        "0"
+        counter(reason);
+
+    position: absolute;
+
+    left: 0;
+
+    color: #4CAF50;
+
+    font-size: 10px;
+
+    font-weight: 850;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   GREEN CHECK
+========================================================= */
+
+.part-eight .why-list > li::after {
+    content: "✓";
+
+    position: absolute;
+
+    left: 31px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border:
+        1px solid
+        rgba(76, 175, 80, 0.25);
+
+    border-radius: 50%;
+
+    background:
+        rgba(76, 175, 80, 0.08);
+
+    color: #4CAF50;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================================================
+   REASON HOVER
+========================================================= */
+
+.part-eight .why-list > li:hover {
+    color: #17231b;
+
+    padding-left: 77px;
+}
+
+
+.part-eight .why-list > li:hover::after {
+    background: #4CAF50;
+
+    color: #ffffff;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.part-eight-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    min-height: 56px;
+
+    margin-top: 55px;
+
+    padding: 0 27px;
+
+    border: none;
+
+    border-radius: 2px;
+
+    background: #17231b;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.4px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.part-eight-arrow {
+    display: inline-flex;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.35s
+        cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.part-eight-button:hover {
+    background: #4CAF50;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(42, 80, 45, 0.16);
+}
+
+
+.part-eight-button:hover
+.part-eight-arrow {
+    transform:
+        translate(3px, -3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .part-eight {
+        padding:
+            100px 35px
+            110px;
+    }
+
+    .part-eight .why {
+        margin-top: 55px;
+    }
+
+    .part-eight .why-content {
+        min-height: 170px;
+
+        padding: 30px 25px;
+    }
+
+    .part-eight .why-content::after {
+        left: 25px;
+    }
+
+    .part-eight .why-list {
+        column-gap: 32px;
+
+        margin-top: 55px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .part-eight .why-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .part-eight .why-content {
+        min-height: auto;
+
+        padding: 28px 10px;
+
+        border-right: none;
+
+        border-bottom:
+            1px solid
+            rgba(26, 38, 29, 0.12);
+    }
+
+    .part-eight .why-content:last-child {
+        border-bottom: none;
+    }
+
+    .part-eight .why-content::after {
+        left: 10px;
+
+        bottom: 18px;
+    }
+
+    .part-eight .why-list {
+        grid-template-columns: 1fr;
+    }
+
+    .part-eight .why-list > li:nth-last-child(-n + 2) {
+        border-bottom: none;
+    }
+
+    .part-eight .why-list > li:last-child {
+        border-bottom:
+            1px solid
+            rgba(25, 35, 28, 0.11);
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .part-eight {
+        padding:
+            80px 20px
+            90px;
+    }
+
+    .part-eight-content::before {
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .part-eight-content > h2 {
+        font-size: 39px;
+
+        line-height: 1.04;
+
+        letter-spacing: -1.6px;
+    }
+
+    .part-eight-content > p {
+        margin-top: 25px;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .part-eight .why {
+        margin-top: 45px;
+    }
+
+    .part-eight .why-content > span {
+        font-size: 48px;
+    }
+
+    .part-eight .why-list {
+        margin-top: 40px;
+    }
+
+    .part-eight .why-list > li {
+        min-height: 78px;
+
+        padding:
+            17px
+            5px
+            17px
+            65px;
+
+        font-size: 13.5px;
+    }
+
+    .part-eight .why-list > li:hover {
+        padding-left: 68px;
+    }
+
+    .part-eight .why-list > li::after {
+        left: 27px;
+
+        width: 23px;
+        height: 23px;
+    }
+
+    .part-eight-button {
+        width: 100%;
+
+        margin-top: 42px;
+
+        justify-content:
+            space-between;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .part-eight *,
+    .part-eight *::before,
+    .part-eight *::after {
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .part-seven {
+        padding:
+            100px 35px
+            110px;
+    }
+
+    .part-seven-content > h2 {
+        margin-bottom: 55px;
+    }
+
+    .part-seven .know {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(340px, 0.9fr);
+
+        column-gap: 45px;
+    }
+
+    .part-seven-image {
+        height: 500px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL SCREEN
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .part-seven .know {
+        grid-template-columns: 1fr;
+
+        row-gap: 28px;
+    }
+
+    .part-seven .know > h2,
+    .part-seven .know > p,
+    .part-seven-image {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .part-seven .know > h2 {
+        max-width: 650px;
+    }
+
+    .part-seven .know > p {
+        max-width: 680px;
+    }
+
+    .part-seven-image {
+        width: 100%;
+        height: 470px;
+
+        margin-top: 15px;
+
+        box-shadow:
+            -12px 12px 0
+            rgba(76, 175, 80, 0.15);
+    }
+
+    .part-seven .know::after {
+        right: -10px;
+        top: auto;
+        bottom: 355px;
+
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .part-seven {
+        padding:
+            80px 20px
+            90px;
+    }
+
+    .part-seven-content::before {
+        margin-bottom: 16px;
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .part-seven-content > h2 {
+        margin-bottom: 45px;
+
+        font-size: 41px;
+
+        line-height: 1.03;
+
+        letter-spacing: -1.8px;
+    }
+
+    .part-seven-content > h2::after {
+        width: 50px;
+
+        margin-top: 20px;
+    }
+
+    .part-seven .know {
+        row-gap: 23px;
+    }
+
+    .part-seven .know > h2 {
+        font-size: 30px;
+
+        line-height: 1.1;
+
+        letter-spacing: -1.1px;
+    }
+
+    .part-seven .know > p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .part-seven-image {
+        height: 390px;
+
+        margin-top: 8px;
+
+        box-shadow:
+            -8px 8px 0
+            rgba(76, 175, 80, 0.16);
+    }
+
+    .part-seven .know::after {
+        display: none;
+    }
+
+    .part-seven .know::before {
+        right: 12px;
+        bottom: 12px;
+
+        padding: 7px 9px;
+
+        font-size: 8px;
+    }
+
+    .part-seven::before {
+        right: -20px;
+        bottom: 5px;
+
+        font-size: 120px;
+
+        letter-spacing: -6px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .part-seven *,
+    .part-seven *::before,
+    .part-seven *::after {
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .part-six {
+        padding:
+            100px 35px
+            115px;
+    }
+
+    .part-six-content::before {
+        margin-bottom: 42px;
+    }
+
+    .part-six .beautiful-destinations-TZ,
+    .part-six .beautiful-destinations-KE,
+    .part-six .beautiful-destinations-RW,
+    .part-six .beautiful-destinations-UG {
+        grid-template-columns: 1fr;
+
+        row-gap: 38px;
+
+        padding: 65px 0;
+    }
+
+    .part-six .beautiful-destinations-TZ {
+        padding-top: 0;
+    }
+
+    .part-six .beautiful-destinations-TZ > h2,
+    .part-six .beautiful-destinations-KE > h2,
+    .part-six .beautiful-destinations-RW > h2,
+    .part-six .beautiful-destinations-UG > h2 {
+        max-width: 680px;
+    }
+
+    .part-six .beautiful-destinations-TZ::after,
+    .part-six .beautiful-destinations-KE::after,
+    .part-six .beautiful-destinations-RW::after,
+    .part-six .beautiful-destinations-UG::after {
+        right: 0;
+        left: auto;
+
+        top: 45px;
+        bottom: auto;
+
+        font-size: 80px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .part-six .beautiful-destinations-list {
+        grid-template-columns: 1fr;
+    }
+
+    .part-six .beautiful-destinations-list > li {
+        min-height: 58px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .part-six {
+        padding:
+            80px 20px
+            90px;
+    }
+
+    .part-six::before {
+        font-size: 100px;
+
+        right: -10px;
+        top: 35px;
+    }
+
+    .part-six-content::before {
+        margin-bottom: 36px;
+
+        font-size: 10px;
+
+        letter-spacing: 2px;
+    }
+
+    .part-six .beautiful-destinations-TZ,
+    .part-six .beautiful-destinations-KE,
+    .part-six .beautiful-destinations-RW,
+    .part-six .beautiful-destinations-UG {
+        row-gap: 30px;
+
+        padding: 52px 0;
+    }
+
+    .part-six .beautiful-destinations-TZ {
+        padding-top: 0;
+    }
+
+    .part-six .beautiful-destinations-TZ > h2,
+    .part-six .beautiful-destinations-KE > h2,
+    .part-six .beautiful-destinations-RW > h2,
+    .part-six .beautiful-destinations-UG > h2 {
+        font-size: 36px;
+
+        line-height: 1.07;
+
+        letter-spacing: -1.4px;
+    }
+
+    .part-six .beautiful-destinations-TZ > h2::before,
+    .part-six .beautiful-destinations-KE > h2::before,
+    .part-six .beautiful-destinations-RW > h2::before,
+    .part-six .beautiful-destinations-UG > h2::before {
+        margin-bottom: 14px;
+    }
+
+    .part-six .beautiful-destinations-list > li {
+        min-height: 57px;
+
+        padding: 14px 2px;
+
+        font-size: 13.5px;
+    }
+
+    .part-six .stats {
+        min-width: 42px;
+
+        padding:
+            4px 8px;
+
+        font-size: 9px;
+    }
+
+    .part-six .beautiful-destinations-TZ::after,
+    .part-six .beautiful-destinations-KE::after,
+    .part-six .beautiful-destinations-RW::after,
+    .part-six .beautiful-destinations-UG::after {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .part-six *,
+    .part-six *::before,
+    .part-six *::after {
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .part-five {
+        padding:
+            95px 35px
+            105px;
+    }
+
+    .part-five-content {
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
+
+        column-gap: 30px;
+    }
+
+    .part-five .explore {
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap: 16px;
+    }
+
+    .part-five .explore-destination {
+        height: 390px;
+    }
+
+    .part-five .explore-destination:nth-child(2),
+    .part-five .explore-destination:nth-child(4) {
+        margin-top: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .part-five-content {
+        grid-template-columns: 1fr;
+    }
+
+    .part-five-content > h2 {
+        max-width: 620px;
+    }
+
+    .part-five-button {
+        width: fit-content;
+
+        margin-top: 28px;
+        margin-bottom: 0;
+    }
+
+    .part-five .explore {
+        margin-top: 45px;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .part-five .explore-destination {
+        height: 380px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .part-five {
+        padding:
+            75px 20px
+            80px;
+    }
+
+    .part-five-content > h2 {
+        font-size: 38px;
+
+        line-height: 1.04;
+
+        letter-spacing: -1.7px;
+    }
+
+    .part-five-content > h2::before {
+        margin-bottom: 15px;
+
+        font-size: 10px;
+    }
+
+    .part-five-button {
+        width: 100%;
+
+        min-height: 50px;
+
+        justify-content:
+            space-between;
+    }
+
+    .part-five .explore {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+
+        margin-top: 38px;
+    }
+
+    .part-five .explore-destination {
+        height: 420px;
+    }
+
+    .part-five
+    .explore-destination h3 {
+        left: 20px;
+        bottom: 20px;
+
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .part-five *,
+    .part-five *::before,
+    .part-five *::after {
+        transition-duration:
+            0.01ms !important;
+    }
+
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .part-four {
+        padding: 75px 35px;
+    }
+
+    .part-four-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .part-four-button:nth-child(2) {
+        border-right: none;
+    }
+
+    .part-four-button:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .part-four-button {
+        min-height: 100px;
+    }
+
+    .part-four::after {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .part-four {
+        padding: 60px 20px;
+    }
+
+    .part-four::before {
+        font-size: 90px;
+
+        bottom: -15px;
+    }
+
+    .part-four-content {
+        grid-template-columns: 1fr;
+    }
+
+    .part-four-button,
+    .part-four-button:nth-child(2) {
+        min-height: 78px;
+
+        padding: 20px 22px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .part-four-button:last-child {
+        border-bottom: none;
+    }
+
+    .part-four-button::before {
+        top: 18px;
+        right: 20px;
+    }
+
+    .part-four-button::after {
+        left: 22px;
+        bottom: 14px;
+    }
+}
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .part-three {
+        padding: 90px 35px 100px;
+    }
+
+    .part-three::before {
+        width: 100%;
+        height: 180px;
+
+        top: auto;
+        bottom: 0;
+    }
+
+    .part-three-content {
+        grid-template-columns: 1fr;
+
+        row-gap: 32px;
+    }
+
+    .part-three-content h2 {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .part-three-image {
+        grid-column: 1;
+        grid-row: auto;
+
+        width: min(100%, 650px);
+
+        height: 450px;
+
+        margin: 0 auto;
+
+        box-shadow:
+            -12px 12px 0 #e2ebde;
+    }
+
+    .part-three-content > p {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .part-three .check-us {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .part-three {
+        padding: 70px 20px 80px;
+    }
+
+    .part-three-content {
+        row-gap: 25px;
+    }
+
+    .part-three-content h2 {
+        font-size: 38px;
+
+        letter-spacing: -1.3px;
+    }
+
+    .part-three-image {
+        height: 340px;
+
+        box-shadow:
+            -8px 8px 0 #e2ebde;
+    }
+
+    .part-three-content > p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .part-three .check-us {
+        margin-top: 20px;
+
+        padding: 24px 20px;
+    }
+
+    .part-three .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .part-three .check-us > button {
+        width: 100%;
+    }
+
+    .part-three .check-us > p:last-child {
+        text-align: center;
+
+        line-height: 1.7;
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .part-two {
+        padding: 90px 35px 100px;
+    }
+
+    .part-two-content {
+        grid-template-columns: 1fr;
+
+        row-gap: 30px;
+    }
+
+    .part-two-content h2 {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .part-two-image {
+        grid-column: 1;
+        grid-row: auto;
+
+        width: min(100%, 650px);
+
+        height: 470px;
+
+        margin: 5px auto;
+
+        justify-self: center;
+    }
+
+    .part-two-content > p {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .check-us {
+        grid-column: 1;
+        grid-row: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .part-two {
+        padding: 75px 20px 85px;
+    }
+
+    .part-two-content {
+        row-gap: 25px;
+    }
+
+    .part-two-content h2 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .part-two-content h2::after {
+        width: 50px;
+
+        height: 3px;
+
+        margin-top: 18px;
+    }
+
+    .part-two-image {
+        height: 350px;
+
+        border-radius: 7px;
+    }
+
+    .part-two-content > p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .check-us {
+        margin-top: 15px;
+
+        padding: 24px 20px;
+
+        border-left-width: 3px;
+    }
+
+    .contact-info p,
+    .visit p {
+        font-size: 13px;
+    }
+
+    .check-us > button {
+        width: 100%;
+    }
+
+    .check-us > p:last-child {
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .choose-us {
+        margin-top: 50px;
+    }
+
+    .choose-us-content ul {
+        gap: 13px;
+    }
+
+    .choose-us-content li {
+        padding: 19px 18px 19px 53px;
+
+        font-size: 13.5px;
+    }
+
+    .choose-us-content li::before {
+        left: 18px;
+    }
+}
+
+
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .choose-us {
+        margin-top: 40px;
+    }
+
+    .choose-us-content ul {
+        grid-template-columns: 1fr;
+
+        gap: 11px;
+    }
+
+    .choose-us-content li {
+        min-height: auto;
+
+        padding: 18px 17px 18px 52px;
+
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+    .choose-us-content li::before {
+        left: 17px;
+
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .part-two {
+        padding: 95px 35px 100px;
+    }
+
+    .part-two-content h2 {
+        letter-spacing: -2px;
+    }
+
+    .part-two-verification {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .verification-button {
+        width: fit-content;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .part-two {
+        padding: 75px 20px 85px;
+    }
+
+    .part-two-eyebrow {
+        font-size: 10px;
+
+        letter-spacing: 1.6px;
+    }
+
+    .part-two-content h2 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .part-two-content h5 {
+        margin-top: 23px;
+
+        font-size: 16px;
+
+        line-height: 1.65;
+    }
+
+    .part-two-content > p {
+        margin-top: 25px;
+
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .part-two-verification {
+        gap: 24px;
+
+        margin-top: 38px;
+
+        padding: 24px 20px;
+    }
+
+    .verification-button {
+        width: 100%;
+
+        min-height: 48px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .discover-destinations {
+        width: 100%;
+
+        margin-top: 45px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .discover-destinations {
+        margin-top: 35px;
+
+        font-size: 12px;
+
+        letter-spacing: 1px;
+    }
+
+    .discover-arrow {
+        font-size: 19px;
+
+        margin-right: 8px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .part-one {
+        padding: 90px 35px 100px;
+    }
+
+    .part-one-content {
+        grid-template-columns: 1fr;
+
+        row-gap: 40px;
+    }
+
+    .part-one-content h2,
+    .part-one-content > p:first-of-type {
+        grid-column: 1;
+    }
+
+    .part-one-content h2 {
+        text-align: center;
+    }
+
+    .part-one-content h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .part-one-content > p:first-of-type {
+        max-width: 750px;
+
+        margin: 0 auto;
+
+        text-align: center;
+    }
+
+    .part-one-image {
+        position: relative;
+
+        top: auto !important;
+        right: auto !important;
+
+        width: 45%;
+        height: 380px;
+
+        margin: 25px 1.5% 0;
+    }
+
+    .part-one-image:nth-of-type(1) {
+        transform: rotate(-3deg);
+    }
+
+    .part-one-image:nth-of-type(2) {
+        transform: rotate(3deg);
+    }
+
+    .part-one-content {
+        display: flex;
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .part-one-content h2,
+    .part-one-content > p:first-of-type {
+        width: 100%;
+    }
+
+    .part-one-content > p:last-of-type {
+        width: 100%;
+
+        margin-top: 70px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .part-one {
+        padding: 75px 20px 85px;
+    }
+
+    .part-one-content h2 {
+        font-size: 39px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .part-one-content > p:first-of-type {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .part-one-image {
+        width: 47%;
+
+        height: 280px;
+
+        border-radius: 5px;
+    }
+
+    .part-one-image:nth-of-type(1) {
+        margin-right: 2%;
+    }
+
+    .part-one-image:nth-of-type(2) {
+        margin-left: 2%;
+    }
+
+    .part-one-content > p:last-of-type {
+        margin-top: 55px;
+
+        padding: 25px 20px;
+
+        font-size: 20px;
+
+        line-height: 1.55;
+    }
+
+    .part-one-content > p:last-of-type::before {
+        font-size: 75px;
+
+        top: -25px;
+    }
+}
+
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1150px) {
+
+            .navbar {
+                padding: 0 24px;
+            }
+
+            .logo {
+                margin-right: 15px;
+            }
+
+            .logo img {
+                width: 105px;
+            }
+
+            .dropbtn,
+            .nav-link {
+                padding-left: 11px;
+                padding-right: 11px;
+
+                font-size: 14px;
+            }
+
+            .search-btn {
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+
+            .trip-button-wrapper {
+                margin-left: 12px;
+            }
+
+            .trip-button {
+                padding: 0 17px;
+            }
+
+            .hero-text {
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+        }
+
+
+        /* =========================================================
+           TABLET / MOBILE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                height: 72px;
+
+                padding: 0 18px;
+            }
+
+            .logo {
+                margin-right: auto;
+            }
+
+            .logo img {
+                width: 95px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .trip-button-wrapper {
+                margin-left: 15px;
+            }
+
+            .trip-button {
+                min-height: 40px;
+
+                padding: 0 16px;
+
+                font-size: 13px;
+            }
+
+            .hero-content {
+                min-height: 650px;
+            }
+
+            .hero-text {
+                padding:
+                    125px
+                    28px
+                    50px;
+            }
+
+            .hero-text h1 {
+                max-width: 650px;
+
+                font-size:
+                    clamp(40px, 8vw, 62px);
+            }
+
+            .hero-text p {
+                max-width: 560px;
+
+                font-size: 16px;
+            }
+        }
+
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================= */
+
+        @media (max-width: 520px) {
+
+            .navbar {
+                height: 68px;
+
+                padding: 0 14px;
+            }
+
+            .logo img {
+                width: 82px;
+            }
+
+            .trip-button {
+                padding: 0 13px;
+
+                font-size: 12px;
+            }
+
+            .hero-content {
+                min-height: 680px;
+            }
+
+            .hero-content img {
+                object-position: center;
+            }
+
+            .hero-content::after {
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(0, 0, 0, 0.68),
+                        rgba(0, 0, 0, 0.34)
+                    );
+            }
+
+            .hero-text {
+                padding:
+                    130px
+                    20px
+                    45px;
+            }
+
+            .hero-eyebrow {
+                font-size: 10px;
+
+                padding: 7px 11px;
+            }
+
+            .hero-text h1 {
+                font-size: 43px;
+
+                letter-spacing: -1.5px;
+            }
+
+            .hero-text p {
+                margin-top: 18px;
+
+                font-size: 15px;
+
+                line-height: 1.65;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+
+                margin-top: 26px;
+            }
+
+            .hero-btn-primary,
+            .hero-btn-secondary {
+                width: 100%;
+            }
+
+            .hero-meta {
+                flex-wrap: wrap;
+
+                gap: 14px 20px;
+
+                margin-top: 28px;
+            }
+        }
+
+    
